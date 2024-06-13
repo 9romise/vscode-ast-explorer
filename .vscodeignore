@@ -1,0 +1,10 @@
+.github
+.vscode
+.vscode-test
+node_modules
+src
+.gitignore
+eslint.config.mjs
+pnpm-lock.yaml
+tsconfig.json
+tsup.config.ts
