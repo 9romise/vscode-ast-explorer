@@ -1,0 +1,103 @@
+{
+  "publisher": "9romise",
+  "name": "vscode-ast-explorer",
+  "displayName": "AST Explorer",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.4.0",
+  "description": "",
+  "author": "Vida Xie<https://github.com/9romise>",
+  "license": "MIT",
+  "homepage": "https://github.com/9romise/vscode-ast-explorer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9romise/vscode-ast-explorer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/9romise/vscode-ast-explorer/issues"
+  },
+  "keywords": [
+    "ast"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "astExplorer",
+          "title": "AST Explorer"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ast-explorer.parse",
+        "enablement": "resourceLangId in ast-explorer.supportedLanguages",
+        "title": "AST Explorer: Parse"
+      },
+      {
+        "command": "ast-explorer.parseWith",
+        "enablement": "resourceLangId in ast-explorer.supportedLanguages",
+        "title": "AST Explorer: Parse With..."
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "ast-explorer/content",
+          "when": "resourceLangId in ast-explorer.supportedLanguages"
+        }
+      ],
+      "ast-explorer/content": [
+        {
+          "command": "ast-explorer.parse"
+        },
+        {
+          "command": "ast-explorer.parseWith"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "ast-explorer/content",
+        "label": "AST Explorer"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "package": "vsce package --no-dependencies",
+    "check type": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.24.7",
+    "@types/css-tree": "^2.3.8",
+    "@types/espree": "^10.0.0",
+    "@types/json-to-ast": "^2.1.4",
+    "@types/node": "^20.14.9",
+    "@types/vscode": "1.74.0",
+    "@typescript-eslint/parser": "^7.14.1",
+    "@vida0905/eslint-config": "^0.2.0",
+    "@vscode/vsce": "^2.29.0",
+    "@vue/compiler-sfc": "^3.4.30",
+    "bumpp": "^9.4.1",
+    "changelogithub": "^0.13.7",
+    "eslint": "^9.5.0",
+    "htmlparser2": "^9.1.0",
+    "lightningcss": "^1.25.1",
+    "postcss": "^8.4.38",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  }
+}
