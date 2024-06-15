@@ -83,7 +83,7 @@
     "@typescript-eslint/parser": "^7.13.0",
     "@vida0905/eslint-config": "^0.2.0",
     "@vscode/vsce": "^2.27.0",
-    "@vue/compiler-sfc": "^3.4.27",
+    "@vue/compiler-sfc": "^3.4.29",
     "bumpp": "^9.4.1",
     "changelogithub": "^0.13.7",
     "eslint": "^9.4.0",
