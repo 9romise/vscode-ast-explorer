@@ -78,7 +78,7 @@
     "@types/css-tree": "^2.3.8",
     "@types/espree": "^10.0.0",
     "@types/json-to-ast": "^2.1.4",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.3",
     "@types/vscode": "1.64.0",
     "@typescript-eslint/parser": "^7.13.0",
     "@vida0905/eslint-config": "^0.2.0",
